@@ -352,15 +352,97 @@ const numMax1 = (arg1, arg2) => {
 };
 console.log(numMax1(115, 100));
 
-
 // 12-Topshiriq
 // Berilgan sonning raqamlari yig‘indisini hisoblovchi funksiya yozing.
-const multiply2 =function(arg1){
-  let sum=0;
-   while(arg1>0){
-    sum+=arg1%10;
-    arg1=Math.trunc(arg1/10);
-   }
-   return sum
-}
+const multiply2 = function (arg1) {
+  let sum = 0;
+  while (arg1 > 0) {
+    sum += arg1 % 10;
+    arg1 = Math.trunc(arg1 / 10);
+  }
+  return sum;
+};
 console.log(multiply2(154));
+
+// 15-Topshiriq
+// Berilgan sonni 3 ning darajasi ekanligini tekshiruvchi funksiya yozing.
+function number3(arg1){
+ 
+  while(arg1!=1){
+    if(arg1%3 !=0){
+     return'Bu son 3 ning darajasi emas '
+      
+    }
+    arg1=arg1/3;
+  }
+  return 'Bu son 3 ning darjasi '
+}
+console.log(number3(27));
+
+// 16-Topshiriq
+// Berilgan sonning barcha bo‘luvchilarini ekranga chiqaruvchi funksiya yozing.
+const boluchi = (arg1) => {
+  let count = "";
+  for (let i = 1; i <= arg1; i++) {
+    if (arg1 % i == 0) {
+      count += i + ",";
+    }
+  }
+  return count;
+};
+console.log(boluchi(18));
+
+// 17-Topshiriq
+// Berilgan sonning raqamlari ko‘paytmasini hisoblovchi funksiya yozing.
+function multiply3(arg1) {
+  let sum = 1;
+  while (arg1 > 0) {
+    sum *= arg1 % 10;
+    arg1 = Math.trunc(arg1 / 10);
+  }
+  return sum;
+}
+console.log(multiply3(153));
+
+// 19-Topshiriq
+// Berilgan ikki son orasidagi barcha tub sonlarni ekranga chiqaruvchi funksiya yozing.
+const number2 = (arg1, arg2) => {
+  let min = "";
+  let max = "";
+  let count = 0;
+
+  if (arg1 > arg2) {
+    max = arg1;
+    min = arg2;
+  } else {
+    max = arg2;
+    min = arg1;
+  }
+
+  for (let i = min; i <= max; i++) {
+    let tubSon = true;
+    if (i > 2) {
+      tubSon = false;
+    }
+
+    for (let j = 2; j <= Math.sqrt(i); j++) {
+      if (i % j === 0) {
+        tubSon = false;
+      }
+    }
+
+    if (tubSon) {
+      console.log(i);
+     
+    }
+  }
+  return count;
+};
+console.log(number2(154, 170));
+
+// 20-Topshiriq
+// Berilgan sonnni kvadrat ildizinin hisoblovchi funksiya yozing
+function kvadratIldiz(arg1) {
+  return Math.sqrt(arg1);
+}
+console.log(kvadratIldiz(9));
